@@ -1,0 +1,42 @@
+/* Garante que toda a página ocupe a tela */
+:host, html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+/* Container principal */
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+/* Canvas do Three.js */
+.renderer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block;
+  background-color: black;
+}
+
+/* Texto sobreposto */
+.overlay {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
