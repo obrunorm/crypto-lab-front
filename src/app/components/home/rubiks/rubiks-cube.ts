@@ -6,8 +6,8 @@ export class RubiksCube {
   cubies: Cubie[] = [];
 
   constructor(size: number = 1) {
-    const cubieSize = size / 1.2; // Cada cubinho ocupa 1/3 do cubo total
-    const spacing = cubieSize + 0.01;  // Sem folga: eles se encostam perfeitamente
+    const cubieSize = size / 1.5;
+    const spacing = cubieSize + 0.03;  // Sem folga: eles se encostam perfeitamente
 
     for (let x = -1; x <= 1; x++) {
       for (let y = -1; y <= 1; y++) {
@@ -17,12 +17,14 @@ export class RubiksCube {
           // multiplica pelo tamanho exato do cubinho
           const cubie = new Cubie(x * spacing, y * spacing, z * spacing, cubieSize);
           this.group.add(cubie.mesh);
+          this.group.position.x = 3;
+          this.group.position.y = 1.5;
           this.cubies.push(cubie);
         }
       }
     }
   // 💡 Luz verde central mais forte
-  const pointLight = new THREE.PointLight(0x8b008b, 50, 10);
+  const pointLight = new THREE.PointLight(0x61cf5a, 50, 10);
   pointLight.position.set(0, 0, 0);
   this.group.add(pointLight);
   }

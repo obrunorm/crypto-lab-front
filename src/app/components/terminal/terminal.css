@@ -1,0 +1,45 @@
+.terminal-container {
+  background: black;
+  color: #00ff6a;
+
+  padding: 20px;
+
+  font-family: 'Courier New', monospace;
+
+  border: 2px solid #00ff6a;
+
+  height: 100%;       /* 👈 força altura real */
+  width: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #00ff6a;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #59ffb0;
+  margin-top: 20px;
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  background: #0a0a0a;
+  color: #00ff6a;
+  border: 1px solid #00ff6a;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #003b1e;
+}

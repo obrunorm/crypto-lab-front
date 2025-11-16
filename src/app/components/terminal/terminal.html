@@ -1,0 +1,17 @@
+<div class="terminal-container">
+  <h1>Laboratório de Encriptação</h1>
+  <p>Selecione o tipo de criptografia:</p>
+
+  <div *ngFor="let cat of categorias" class="categoria">
+    <h2>{{ cat.nome }}</h2>
+
+    <div class="botoes">
+      <button 
+        *ngFor="let m of cat.metodos"
+        (click)="selecionarMetodo(m)"
+      >
+        {{ m }}
+      </button>
+    </div>
+  </div>
+</div>

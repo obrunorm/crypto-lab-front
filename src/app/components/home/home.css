@@ -12,7 +12,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden
+  overflow: hidden;
 }
 
 /* Canvas do Three.js */
@@ -22,22 +22,64 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  display: block
+  z-index: 2; /* Fica acima do text1, mas abaixo do text se quiser */
+  display: block;
+  max-width: 40%;      /* limita o texto a 20% da tela */
+  padding-left: 60px;
 }
 
-/* Texto sobreposto */
+.start-button {
+  font-family: 'Anurati', sans-serif;
+  font-size: 2.5em;
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  padding: 20px 60px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.start-button:hover {
+  background: white;
+  color: black;
+}
+
 .overlay {
   position: absolute;
-  top: 20px;
-  left: 0;
+  top: 50px;
+  left: -20%;
   width: 100%;
-  color: white;
-  text-align: center;
-  z-index: 2;
-  pointer-events: none
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3; /* acima do Three.js */
+  pointer-events: auto;
 }
 
-.text {
-  font-size: 300%;
+app-terminal {
+  display: block;
+
+  width: 50vw;
+
+  height: 90vh;       /* 👈 agora ele tem altura real */
+  max-height: 70vh;
+  overflow: visible;  /* 👈 permite borda inferior aparecer */
 }
+
+
+.bg-watermark {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; /* atrás de tudo */
+  font-family: 'Anurati', sans-serif;
+  color: rgba(255, 255, 255, 0.15); /* branco com transparência */
+  font-size: clamp(4rem, 15vw, 10rem);
+  letter-spacing: 0.1em;
+  white-space: nowrap; /* 👈 impede quebra de linha */
+  text-transform: uppercase;
+  pointer-events: none; /* não interfere em cliques */
+  user-select: none; /* não pode selecionar o texto */
+}
+

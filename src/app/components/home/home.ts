@@ -1,14 +1,19 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import * as THREE from 'three';
 import { RubiksCube } from './rubiks/rubiks-cube';
+import { TerminalComponent } from '../terminal/terminal';
+import { CommonModule } from '@angular/common'; // 👈 IMPORTANTE
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  styleUrls: ['./home.css'],
+  imports: [CommonModule, TerminalComponent] // 👈 ADICIONE AQUI
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('rendererContainer', { static: true }) rendererContainer!: ElementRef;
+  showTerminal = false;
 
   ngAfterViewInit() {
     const scene = new THREE.Scene();
@@ -106,116 +111,6 @@ export class HomeComponent implements AfterViewInit {
 
       renderer.render(scene, camera);
     };
-
-        // cubo 1
-    cube.setCubieColor(0, 1, 0x555fa3) // verde
-    cube.setCubieColor(0, 3, 0xf6f7f9) // branco
-    cube.setCubieColor(0, 5, 0xff1493) // laranja
-
-    // cubo 2
-    cube.setCubieColor(1, 1, 0x555fa3) // verde
-    cube.setCubieColor(1, 3, 0xf6f7f9) // branco
-
-    // cubo 3
-    cube.setCubieColor(2, 1, 0x555fa3) // verde
-    cube.setCubieColor(2, 3, 0xf6f7f9) // branco
-    cube.setCubieColor(2, 4, 0x00aae4) // vermelho
-
-    // cubo 4
-    cube.setCubieColor(3, 1, 0x555fa3) // verde
-    cube.setCubieColor(3, 5, 0xff1493) // laranja
-
-    // cubo 5
-    cube.setCubieColor(4, 1, 0x555fa3) // verde
-
-    // cubo 6
-    cube.setCubieColor(5, 1, 0x555fa3) // verde
-    cube.setCubieColor(5, 4, 0x00aae4) // vermelho
-
-    // cubo 7
-    cube.setCubieColor(6, 1, 0x555fa3) // verde
-    cube.setCubieColor(6, 5, 0xff1493) // laranja
-    cube.setCubieColor(6, 2, 0x9400d3) // amarelo
-
-    // cubo 8
-    cube.setCubieColor(7, 1, 0x555fa3) // verde
-    cube.setCubieColor(7, 2, 0x9400d3) // amarelo
-
-    // cubo 9
-    cube.setCubieColor(8, 1, 0x555fa3) // verde
-    cube.setCubieColor(8, 4, 0x00aae4) // vermelho
-    cube.setCubieColor(8, 2, 0x9400d3) // amarelo
-
-    // cubo 10
-    cube.setCubieColor(9, 5, 0xff1493) // laranja
-    cube.setCubieColor(9, 3, 0xf6f7f9) // branco
-
-    // cubo 11
-    cube.setCubieColor(10, 3, 0xf6f7f9) // branco
-
-    // cubo 12
-    cube.setCubieColor(11, 4, 0x00aae4) // vermelho
-    cube.setCubieColor(11, 3, 0xf6f7f9) // branco
-
-    // cubo 13
-    cube.setCubieColor(11, 4, 0x00aae4) // vermelho
-    cube.setCubieColor(11, 3, 0xf6f7f9) // branco
-
-    // cubo 13
-    cube.setCubieColor(12, 5, 0xff1493) // laranja
-
-    // cubo 14
-    cube.setCubieColor(13, 4, 0x00aae4) // vermelho
-
-    // cubo 15
-    cube.setCubieColor(14, 5, 0xff1493) // laranja
-    cube.setCubieColor(14, 2, 0x9400d3) // amarelo
-
-    // cubo 16
-    cube.setCubieColor(15, 2, 0x9400d3) // amarelo
-
-    // cubo 17
-    cube.setCubieColor(16, 4, 0x00aae4) // vermelho
-    cube.setCubieColor(16, 2, 0x9400d3) // amarelo
-
-    // cubo 18
-    cube.setCubieColor(17, 0, 0x240054) // azul
-    cube.setCubieColor(17, 3, 0xf6f7f9) // branco
-    cube.setCubieColor(17, 5, 0xff1493) // laranja
-
-    // cubo 19
-    cube.setCubieColor(18, 0, 0x240054) // azul
-    cube.setCubieColor(18, 3, 0xf6f7f9) // branco
-
-    // cubo 20
-    cube.setCubieColor(19, 0, 0x240054) // azul
-    cube.setCubieColor(19, 3, 0xf6f7f9) // branco
-    cube.setCubieColor(19, 4, 0x00aae4) // vermelho
-
-    // cubo 21 
-    cube.setCubieColor(20, 0, 0x240054) // azul
-    cube.setCubieColor(20, 5, 0xff1493) // laranja
-
-    // cubo 22
-    cube.setCubieColor(21, 0, 0x240054) // azul
-
-    // cubo 23
-    cube.setCubieColor(22, 0, 0x240054) // azul
-    cube.setCubieColor(22, 4, 0x00aae4) // vermelho
-
-    // cubo 24
-    cube.setCubieColor(23, 0, 0x240054) // azul
-    cube.setCubieColor(23, 5, 0xff1493) // laranja
-    cube.setCubieColor(23, 2, 0x9400d3) // amarelo
-
-    // cubo 25
-    cube.setCubieColor(24, 0, 0x240054) // azul
-    cube.setCubieColor(24, 2, 0x9400d3) // amarelo
-
-    // cubo 26
-    cube.setCubieColor(25, 0, 0x240054) // azul
-    cube.setCubieColor(25, 2, 0x9400d3) // amarelo
-    cube.setCubieColor(25, 4, 0x00aae4) // vermelho
 
     animate();
 

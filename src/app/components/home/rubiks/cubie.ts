@@ -10,7 +10,7 @@ export class Cubie {
     // Inicializa as 6 faces com petro neutro
     this.materials = Array(6)
       .fill(0)
-      .map(() => new THREE.MeshStandardMaterial({ color: 0x020403, }));
+      .map(() => new THREE.MeshStandardMaterial({ color: 0x020403}));
 
     this.mesh = new THREE.Mesh(geometry, this.materials);
     this.mesh.position.set(x, y, z);

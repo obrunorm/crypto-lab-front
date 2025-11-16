@@ -7,7 +7,7 @@ body, html {
   animation: gradientFlow 12s ease infinite;
   color: white;
   font-family: 'Anurati', sans-serif;
-  background: linear-gradient(135deg, #000000 0%, #4b0082 60%, #ffffff 100%);
+  background: #030602;
 }
 
 /* Importa a fonte */
@@ -16,25 +16,4 @@ body, html {
   src: url('./app/assets/Anurati-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-}
-
-/* Fundo com gradiente animado 
-body {
-  background-size: 300% 300%;
-  animation: gradientFlow 12s ease infinite;
-  color: white;
-  font-family: 'Anurati', sans-serif;
-}*/
-
-/* Animação suave do gradiente */
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  75% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
